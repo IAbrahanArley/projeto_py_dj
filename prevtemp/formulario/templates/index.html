@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>prev temp</title>
+</head>
+<body>
+  <h1>Dados do Arquivo CSV</h1>
+  <form action="http://127.0.0.1:8000/formulario" method="get">
+     <label for="nome">cidade:</label>
+     <input type="text" id="name" name="cidade"><br><br>
+
+     <input type="submit" value="Enviar">
+ </form> 
+  
+  <table>
+     <td>
+          <th>tempo</th>
+          <th>Sensação termica</th>
+          <th>temperatura minima</th>
+          <th>temperatura máxima</th>
+          <th>Pressão</th>
+          <th>Humidade</th>
+     </td>
+     {% for tempo in dados %}
+     <tr>
+          
+          <td>{{tempo.temp}}</td>
+          <td>{{tempo.feels_like}}</td>
+          <td>{{tempo.temp_min}}</td>
+          <td>{{tempo.temp_max}}</td>
+          <td>{{tempo.pressure}}</td>
+          <td>{{tempo.humidity}}</td>
+     </tr>
+     {% endfor %}
+
+  </table>
+
+</body>
+</html>
